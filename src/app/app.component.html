@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h4>parent component</h4>
+    </div>
+    <div class="card-body">
+      pass data:
+      <input
+        #nameRef
+        type="text"
+        class="form-control"
+        [(ngModel)]="enterName"
+      />
+      <input
+        type="button"
+        value="send"
+        (click)="TransferData()"
+        class="btn btn-primary"
+      />
+    </div>
+  </div>
+  <hr />
+  {{ value }}
+  <!-- <app-home [parentData]="parentData"></app-home> parent to child example-->
+  <app-home (sendData)="sendData($event)"></app-home>
+  <!-- child to parent example -->
+</div>
